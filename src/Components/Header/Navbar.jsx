@@ -16,7 +16,7 @@ const Navbar = () => {
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-[1rem] font-medium">
          <NavLink to='/'>Home</NavLink>
-         <NavLink to='/app'>App</NavLink>
+         <NavLink to='/apps'>Apps</NavLink>
         <NavLink to='/installation'>Installation</NavLink>
       </ul>
     </div>
@@ -25,7 +25,7 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-[1rem] font-medium">
       <NavLink className='mr-4' to='/'>Home</NavLink>
-      <NavLink className='mr-4' to='/app'>App</NavLink>
+      <NavLink className='mr-4' to='/apps'>Apps</NavLink>
       <NavLink className='' to='/installation'>Installation</NavLink>
     </ul>
   </div>
