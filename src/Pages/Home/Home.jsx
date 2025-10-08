@@ -1,11 +1,13 @@
 import React from 'react';
 import Banner from './Banner';
-import { Link, useLoaderData } from 'react-router';
+import { Link, } from 'react-router';
 import SingleApp from './SingleApp';
+import useApphook from '../../Hooks/useApphook';
 
 const Home = () => {
-    const AppsData= useLoaderData();
-     const FirstEigntApp=AppsData.slice(0,8)
+    const {appData}=useApphook()
+    // const AppsData= useLoaderData();
+     const FirstEigntApp=appData.slice(0,8)
     return (
         <div className='bg-gray-100'>
            <Banner></Banner>
