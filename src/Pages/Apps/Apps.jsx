@@ -6,8 +6,8 @@ import useApphook from '../../Hooks/useApphook';
 const Apps = () => {
     const {appData}=useApphook();
     const [search, setSearch]=useState('')
-    const term = search.trim().toLocaleLowerCase();
-    const searchItem= term ? appData.filter(items=> items.title.toLocaleLowerCase().includes(term)): appData;
+    const term = search.trim().toLowerCase();
+    const searchItem= term ? appData.filter(items=> items.title.toLowerCase().includes(term)): appData;
     
     return (
         <div className=' bg-gray-100'>

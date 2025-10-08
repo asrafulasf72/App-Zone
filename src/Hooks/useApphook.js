@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
     
     useEffect(()=>{
         setloading(true)
-        axios('./appData.json')
+        axios('../appData.json')
         .then(data=> setAppData(data.data))
         .catch(err=> setError(err))
         .finally(()=> setloading(false))
