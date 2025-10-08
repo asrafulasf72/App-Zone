@@ -26,19 +26,19 @@ const Banner = () => {
                  </div>
                  <div className='text-white flex flex-col md:flex-row gap-2 justify-between items-center mt-5'>
                       <div className='flex flex-col items-center'>
-                            <p className='text-[.9rem] font-light'>Total Downloads</p>
-                            <h3 className='text-[3rem] font-bold'>29.6M</h3>
-                            <p className='text-[.9rem] font-light'>21% more than last month</p>
+                            <p className='text-[.8rem] font-light'>Total Downloads</p>
+                            <h3 className='text-[2.8rem] font-bold'>29.6M</h3>
+                            <p className='text-[.8rem] font-light'>21% more than last month</p>
                       </div>
                       <div className='flex flex-col items-center'>
-                           <p className='text-[.9rem] font-light'>Total Reviews</p>
-                           <h3 className='text-[3rem] font-bold'>906k</h3>
-                           <p className='text-[.9rem] font-light'>46% more than last month</p>
+                           <p className='text-[.8rem] font-light'>Total Reviews</p>
+                           <h3 className='text-[2.8rem] font-bold'>906k</h3>
+                           <p className='text-[.8rem] font-light'>46% more than last month</p>
                       </div>
                       <div className='flex flex-col items-center'>
-                           <p className='text-[.9rem] font-light'>Active Apps</p>
-                           <h3 className='text-[3rem] font-bold'>132+</h3>
-                           <p className='text-[.9rem] font-light'>31 more will Launch</p>
+                           <p className='text-[.8rem] font-light'>Active Apps</p>
+                           <h3 className='text-[2.8rem] font-bold'>132+</h3>
+                           <p className='text-[.8rem] font-light'>31 more will Launch</p>
                       </div>
                  </div>
                 </div>
