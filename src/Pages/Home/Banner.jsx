@@ -2,17 +2,18 @@ import React from 'react';
 import play from '../../assets/play.png'
 import app from '../../assets/app.png'
 import heroBanner from '../../assets/hero.png'
+import { Link } from 'react-router';
 
 const Banner = () => {
     return (
-        <div className='bg-gray-100'>
-            <div className='max-w-[1270px] mx-auto'>
+        <div>
+            <div className='max-w-[1300px] mx-auto px-2'>
                    <div className='flex flex-col justify-center items-center text-center max-w-[680px] mx-auto px-1 pt-10'>
                      <h1 className='text-[3rem] font-bold'>We Build<br/><span className='bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent'>Productive </span>Apps</h1>
                      <p className='text-[.9rem] font-normal text-[#627382]'>At App Zone, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact </p>
                      <div className='flex gap-8 mt-3'>
-                        <button className='flex items-center gap-1 border-2 border-gray-300 rounded-[.3rem] px-3 py-1.5'><img className='w-4' src={play} alt="Play store" />Google Play</button>
-                        <button className='flex items-center gap-1 border-2 border-gray-300 rounded-[.3rem] px-3 py-1.5'><img className='w-4' src={app} alt="App store" />App Store</button>
+                        <button className=' border-2 border-gray-300 rounded-[.3rem] px-3 py-1.5'> <Link className='flex items-center gap-1' to='https://play.google.com/store/apps?hl=en'><img className='w-4' src={play} alt="Play store" />Google Play</Link></button>
+                        <button className=' border-2 border-gray-300 rounded-[.3rem] px-3 py-1.5'> <Link className='flex items-center gap-1' to='https://www.apple.com/app-store/'><img className='w-4' src={app} alt="App store" />App Store</Link></button>
                      </div>
                    </div>
                    <div className='flex justify-center items-center mt-10 px-2'>
