@@ -21,7 +21,7 @@ const Home = () => {
                     }
                 </div>
                 <div className='flex justify-center items-center'> 
-                    <button className='bg-gradient-to-r from-[#632EE3] to-[#9F62F2] px-4 py-1.5 text-[1rem] font-bold text-white rounded-[.4rem] mt-8'><Link to='/apps'>Show All</Link></button>
+                    <button className='bg-gradient-to-r from-[#632EE3] to-[#9F62F2] px-4 py-1.5 text-[1rem] font-bold text-white rounded-[.4rem] mt-8 mb-2'><Link to='/apps'>Show All</Link></button>
                 </div>
            </div>
         </div>

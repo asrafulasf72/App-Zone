@@ -20,7 +20,7 @@ const Navbar = () => {
         <NavLink to='/installation'>Installation</NavLink>
       </ul>
     </div>
-    <Link className='flex gap-1 justify-center items-center bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent text-[1.1rem] font-semibold' to='/'><img className='w-10' src={logo} alt="App Zone Logo" />App Zone</Link>
+    <Link className='flex gap-1 justify-center items-center bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent text-[1.2rem] font-bold' to='/'><img className='w-10' src={logo} alt="App Zone Logo" />App Zone</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-[1rem] font-medium">

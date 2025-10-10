@@ -7,7 +7,7 @@ const Allapp = ({allApp}) => {
     const {image,title,downloads,ratingAvg,id}=allApp;
     return (
            <Link to={`/apps/${id}`}>
-            <div className='px-1.5 py-2 bg-white shadow-sm rounded-[.5rem] hover:scale-105 transition ease-in-out'>
+            <div className='px-1.5 py-2 bg-white shadow-sm rounded-[.5rem] hover:scale-105 transition ease-in-out mb-2'>
                <div className='flex justify-center items-center'>
                     <img src={image} alt="App logo" />
                </div>

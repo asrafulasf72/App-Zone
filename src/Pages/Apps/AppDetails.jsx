@@ -23,9 +23,7 @@ const AppDetails = () => {
 
     const appDetails=appData.find(a=>a.id===appId)
         if (!appDetails) return <p>App not found.</p>;
-       const {title,image,companyName,downloads,reviews,ratingAvg,size}=appDetails
-
-
+       const {title,image,companyName,downloads,reviews,ratingAvg,size,description}=appDetails
 
        const handalinstallApp=(id,image,title,ratingAvg,downloads,size)=>{
             const success= addStoredApp(id,image,title,ratingAvg,downloads,size)
@@ -33,7 +31,6 @@ const AppDetails = () => {
                 setIsInstalledApp(true)
             }
        }
-
     return (
         <div className='bg-gray-100'>
             <div className='max-w-[1300px] mx-auto'>
@@ -69,8 +66,13 @@ const AppDetails = () => {
                       </div>
                   </div>
                </div>
-
-
+                  <div>
+                     <h1>Here will be rechart</h1>
+                  </div>
+                  <div className='space-y-3 pb-3'>
+                      <h1 className='text-[1.3rem] font-medium'>Description</h1>
+                      <p>{description}</p>
+                  </div>
             </div>
         </div>
     );
