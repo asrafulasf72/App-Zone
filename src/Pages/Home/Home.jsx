@@ -5,8 +5,15 @@ import SingleApp from './SingleApp';
 import useApphook from '../../Hooks/useApphook';
 
 const Home = () => {
-    const {appData}=useApphook()
+    const {appData,loading}=useApphook()
     // const AppsData= useLoaderData();
+    if(loading){
+        return(
+             <div className="flex justify-center items-center h-screen">
+                <button className="btn btn-square loading"></button>
+            </div>
+        )
+    }
      const FirstEigntApp=appData.slice(0,8)
     return (
         <div className='bg-gray-100'>

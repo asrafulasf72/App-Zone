@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import InstalledApp from './InstalledApp';
 import { removeStoredApp } from '../../Utility/AddToLocalDB';
+import useApphook from '../../Hooks/useApphook';
 
 const Installation = () => {
 
     const [installationApps, setInstallation]=useState([])
     const [sortOrder, setSortOrder]=useState('none' )
+    const {loading}=useApphook()
 
     useEffect(()=>{
         const installedApps=JSON.parse(localStorage.getItem("installation"))
@@ -13,6 +15,13 @@ const Installation = () => {
             setInstallation(installedApps)
         }
     },[])
+            if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <button className="btn btn-square loading"></button>
+            </div>
+        );
+    } 
 
     const handalUninstall=(id)=>{
          removeStoredApp(id)
