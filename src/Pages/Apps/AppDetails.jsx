@@ -7,6 +7,7 @@ import re from '../../assets/icon-review.png'
 import { addStoredApp, getStoredApps } from '../../Utility/AddToLocalDB';
 import { useEffect, useState } from 'react';
 import { Bar, BarChart, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const AppDetails = () => {
@@ -31,6 +32,16 @@ const AppDetails = () => {
             const success= addStoredApp(id,image,title,ratingAvg,downloads,size)
             if(success){
                 setIsInstalledApp(true)
+
+                toast.success(`Yahoo!!! ${title} Installed Successfully`,{
+                    position: 'top-center',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
             }
        }
     return (
@@ -87,6 +98,7 @@ const AppDetails = () => {
                       <p>{description}</p>
                   </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
