@@ -6,7 +6,7 @@ import { Facebook, Instagram, Linkedin } from 'lucide-react';
 const Footer = () => {
     return (
          <div className='bg-[#0D1164] '>
-               <div className='max-w-[1300px] mx-auto py-12'>
+               <div className='max-w-[1300px] mx-auto py-4'>
                    <div className='flex flex-col md:flex-row justify-between items-center gap-2.5'>
                     <div>
                          <h1 className='flex items-center'><img className='w-15' src={footerlogo} alt="" /><Link className='text-[1.8rem] font-bold text-white' to='/'>App Zone</Link></h1>
@@ -40,8 +40,8 @@ const Footer = () => {
                    </div>
                </div>
                 <div className="divider divider-end max-w-[1300px] mx-auto"></div>
-                    <div className='flex justify-center items-center'>
-                         <p className='text-gray-50 text-[.8rem] font-light p-3'>Copyright © 2025 - All right reserved</p>
+                    <div className='flex justify-center items-center bg-[#86B0BD]'>
+                         <p className='text-[.8rem] font-light p-3 text-black'>Copyright © 2025 - All right reserved</p>
                     </div>
          </div>
     );

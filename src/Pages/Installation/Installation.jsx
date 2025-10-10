@@ -4,6 +4,7 @@ import InstalledApp from './InstalledApp';
 const Installation = () => {
 
     const [installationApps, setInstallation]=useState([])
+    const [sortOrder, setSortOrder]=useState('none' )
 
     useEffect(()=>{
         const installedApps=JSON.parse(localStorage.getItem("installation"))
@@ -11,6 +12,17 @@ const Installation = () => {
             setInstallation(installedApps)
         }
     },[])
+
+    const sortItem=(
+        ()=>{
+        if(sortOrder==='size-asc'){
+            return [...installationApps].sort((a,b)=> a.size-b.size)
+        }else if(sortOrder==='size-dsc'){
+            return [...installationApps].sort((a,b)=> b.size-a.size)
+        }else{
+           return installationApps
+        }
+    })()
     return (
         <div className=' bg-gray-100'>
             <div className=' max-w-[1300px] mx-auto'>
@@ -20,13 +32,19 @@ const Installation = () => {
                 </div>
 
                 <div className='flex justify-between items-center px-3'>
-                    <h1 className='text-[1.2rem] font-semibold'>{installationApps.length} App Found</h1>
-                    <button className='border-2 border-gray-300 rounded-[.4rem] px-3 py-1'>Short</button>
+                    <h1 className='text-[1.2rem] font-semibold'>{sortItem.length} App Found</h1>
+                   <label className='from-controlled'>
+                      <select className='select select-bordered text-[1rem] font-medium' defaultValue={sortOrder} onChange={(e)=>setSortOrder(e.target.value)}>
+                         <option value="none">Sort By Size</option>
+                         <option value="size-asc">Low-High</option>
+                         <option value="size-dsc">High-Low</option>
+                      </select>
+                   </label>
                 </div>
 
                 <div className='py-2'>
                     {
-                        installationApps.map(a=> <InstalledApp key={a.id} a={a}></InstalledApp>)
+                        sortItem.map(a=> <InstalledApp key={a.id} a={a}></InstalledApp>)
                     }
                 </div>
               
