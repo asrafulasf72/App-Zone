@@ -6,6 +6,7 @@ import rt from '../../assets/icon-ratings.png'
 import re from '../../assets/icon-review.png'
 import { addStoredApp, getStoredApps } from '../../Utility/AddToLocalDB';
 import { useEffect, useState } from 'react';
+import { Bar, BarChart, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 
 const AppDetails = () => {
@@ -24,6 +25,7 @@ const AppDetails = () => {
     const appDetails=appData.find(a=>a.id===appId)
         if (!appDetails) return <p>App not found.</p>;
        const {title,image,companyName,downloads,reviews,ratingAvg,size,description}=appDetails
+       const ratingData=[...appDetails.ratings].reverse()
 
        const handalinstallApp=(id,image,title,ratingAvg,downloads,size)=>{
             const success= addStoredApp(id,image,title,ratingAvg,downloads,size)
@@ -66,8 +68,19 @@ const AppDetails = () => {
                       </div>
                   </div>
                </div>
-                  <div>
-                     <h1>Here will be rechart</h1>
+                  <div className="bg-white p-5 rounded-2xl shadow-sm mt-5">
+                     <h1 className="text-[1.3rem] font-semibold mb-5">Ratings</h1>
+
+                     <ResponsiveContainer width="100%" height={250}>
+                          <BarChart data={ratingData} layout='vertical' margin={{top:10,right:30, left:40, bottom:0}}>
+                             <XAxis type='number'></XAxis>
+                             <YAxis dataKey='name' type='category' width={80}></YAxis>
+                             <Tooltip></Tooltip>
+                             <Bar dataKey="count" fill="#ff8800" radius={[0, 5, 5, 0]}>
+                                 <LabelList dataKey="count" position="insideRight" fill="white"></LabelList>
+                             </Bar>
+                          </BarChart>
+                     </ResponsiveContainer>
                   </div>
                   <div className='space-y-3 pb-3'>
                       <h1 className='text-[1.3rem] font-medium'>Description</h1>
