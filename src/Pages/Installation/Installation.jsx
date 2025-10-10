@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import InstalledApp from './InstalledApp';
 
 const Installation = () => {
 
-    const [installation, setInstallation]=useState([])
+    const [installationApps, setInstallation]=useState([])
 
     useEffect(()=>{
         const installedApps=JSON.parse(localStorage.getItem("installation"))
@@ -19,8 +20,14 @@ const Installation = () => {
                 </div>
 
                 <div className='flex justify-between items-center px-3'>
-                    <h1 className='text-[1.2rem] font-semibold'>{installation.length} App Found</h1>
-                    <button className='border-2 border-gray-300 rounded-[.4rem] px-3 py-1.5'>Short</button>
+                    <h1 className='text-[1.2rem] font-semibold'>{installationApps.length} App Found</h1>
+                    <button className='border-2 border-gray-300 rounded-[.4rem] px-3 py-1'>Short</button>
+                </div>
+
+                <div className='py-2'>
+                    {
+                        installationApps.map(a=> <InstalledApp key={a.id} a={a}></InstalledApp>)
+                    }
                 </div>
               
             </div>

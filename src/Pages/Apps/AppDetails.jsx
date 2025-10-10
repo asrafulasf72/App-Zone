@@ -27,8 +27,8 @@ const AppDetails = () => {
 
 
 
-       const handalinstallApp=(id,title,ratingAvg,downloads,size)=>{
-            const success= addStoredApp(id,title,ratingAvg,downloads,size)
+       const handalinstallApp=(id,image,title,ratingAvg,downloads,size)=>{
+            const success= addStoredApp(id,image,title,ratingAvg,downloads,size)
             if(success){
                 setIsInstalledApp(true)
             }
@@ -65,7 +65,7 @@ const AppDetails = () => {
                            </div>
                       </div>
                       <div>
-                        <button onClick={()=>handalinstallApp(appId,title,ratingAvg,downloads,size)} disabled={isInstalledApp} className={`text-[1.2rem] font-semibold mt-5 px-3 py-1.5 rounded-[.5rem] ${isInstalledApp? 'bg-gray-300 cursor-not-allowed': 'bg-[#00d390] text-white'}`}>{isInstalledApp? 'Installed': `Install Now (${size} MB)`}</button>
+                        <button onClick={()=>handalinstallApp(appId,image,title,ratingAvg,downloads,size)} disabled={isInstalledApp} className={`text-[1.2rem] font-semibold mt-5 px-3 py-1.5 rounded-[.5rem] ${isInstalledApp? 'bg-gray-300 cursor-not-allowed': 'bg-[#00d390] text-white'}`}>{isInstalledApp? 'Installed': `Install Now (${size} MB)`}</button>
                       </div>
                   </div>
                </div>

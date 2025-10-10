@@ -3,7 +3,7 @@ const getStoredApps=()=>{
     return stored?JSON.parse(stored):[];
 }
 
-const addStoredApp=(id,title,ratingAvg,downloads,size)=>{
+const addStoredApp=(id,image,title,ratingAvg,downloads,size)=>{
     const storedApps=getStoredApps();
 
     const exsist =storedApps.some(app=> app.id===id)
@@ -12,7 +12,7 @@ const addStoredApp=(id,title,ratingAvg,downloads,size)=>{
         return false
     }
 
-    const newApp={id,title,ratingAvg,downloads,size};
+    const newApp={id,image,title,ratingAvg,downloads,size};
     const updateApps=[...storedApps,newApp]
     localStorage.setItem("installation", JSON.stringify(updateApps))
     return true;
