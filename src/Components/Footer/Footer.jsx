@@ -40,7 +40,7 @@ const Footer = () => {
                    </div>
                </div>
                 <div className="divider divider-end max-w-[1300px] mx-auto"></div>
-                    <div className='flex justify-center items-center bg-[#86B0BD]'>
+                    <div className='flex justify-center items-center bg-[#16476A]'>
                          <p className='text-[.8rem] font-light p-3 text-black'>Copyright © 2025 - All right reserved</p>
                     </div>
          </div>
