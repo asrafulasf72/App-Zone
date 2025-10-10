@@ -8,6 +8,7 @@ import { addStoredApp, getStoredApps } from '../../Utility/AddToLocalDB';
 import { useEffect, useState } from 'react';
 import { Bar, BarChart, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { toast, ToastContainer } from 'react-toastify';
+import AppnotFound from '../../Components/ErrorPage/AppnotFound';
 
 
 const AppDetails = () => {
@@ -24,7 +25,7 @@ const AppDetails = () => {
        if(loading) return <p>Loading...</p>
 
     const appDetails=appData.find(a=>a.id===appId)
-        if (!appDetails) return <p>App not found.</p>;
+        if (!appDetails) return <AppnotFound></AppnotFound>
        const {title,image,companyName,downloads,reviews,ratingAvg,size,description}=appDetails
        const ratingData=[...appDetails.ratings].reverse()
 

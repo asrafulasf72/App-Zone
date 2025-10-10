@@ -2,6 +2,7 @@ import { Search } from 'lucide-react';
 import React, { useState } from 'react';
 import Allapp from './Allapp';
 import useApphook from '../../Hooks/useApphook';
+import AppnotFound from '../../Components/ErrorPage/AppnotFound';
 
 const Apps = () => {
     const {appData,loading}=useApphook();
@@ -44,6 +45,10 @@ const Apps = () => {
                                <div className="flex justify-center items-center col-span-4 h-32">
                                     <button className="btn btn-square loading"></button>
                                 </div>
+                        ): searchItem.length=== 0?(
+                              <div className='col-span-4'>
+                                    <AppnotFound></AppnotFound>
+                               </div>
                         ):(searchItem.map(allApp=> <Allapp key={allApp.id} allApp={allApp}></Allapp>))
                     }
                  </div>
