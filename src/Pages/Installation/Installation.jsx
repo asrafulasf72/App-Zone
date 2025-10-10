@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import InstalledApp from './InstalledApp';
 import { removeStoredApp } from '../../Utility/AddToLocalDB';
 import useApphook from '../../Hooks/useApphook';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Installation = () => {
 
     const [installationApps, setInstallation]=useState([])
     const [sortOrder, setSortOrder]=useState('none' )
     const {loading}=useApphook()
+
 
     useEffect(()=>{
         const installedApps=JSON.parse(localStorage.getItem("installation"))
@@ -26,6 +28,16 @@ const Installation = () => {
     const handalUninstall=(id)=>{
          removeStoredApp(id)
          setInstallation(prev=>prev.filter(app=>app.id !==id));
+         toast.success(`Uninstalled This App From your Device`,{
+                    position: 'top-center',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
+
     }
 
     const sortItem=(
@@ -64,6 +76,7 @@ const Installation = () => {
                 </div>
               
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
