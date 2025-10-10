@@ -1,19 +1,24 @@
-import React from 'react';
+
 import { useParams } from 'react-router';
 import useApphook from '../../Hooks/useApphook';
 import dw from '../../assets/icon-downloads.png'
 import rt from '../../assets/icon-ratings.png'
 import re from '../../assets/icon-review.png'
+import { addStoredApp } from '../../Utility/AddToLocalDB';
+
 
 const AppDetails = () => {
     const {id}=useParams();
     const appId=parseInt(id)
-    const {appData,loading}=useApphook();
-    
+    const {appData,loading}=useApphook('');
     const appDetails=appData.find(a=>a.id===appId)
         if(loading) return <p>Loading...</p>
        const {title,image,companyName,downloads,reviews,ratingAvg,size}=appDetails
-    
+
+       const handalinstallApp=(id,title)=>{
+             addStoredApp(id,title)
+       }
+
     return (
         <div className='bg-gray-100'>
             <div className='max-w-[1300px] mx-auto'>
@@ -45,7 +50,7 @@ const AppDetails = () => {
                            </div>
                       </div>
                       <div>
-                        <button className='text-[1.2rem] font-semibold mt-5 bg-[#00d390] text-white px-3 py-1.5 rounded-[.5rem]'>Install Now ({size} MB)</button>
+                        <button onClick={()=>handalinstallApp(id,title)} className='cursor-pointer text-[1.2rem] font-semibold mt-5 bg-[#00d390] text-white px-3 py-1.5 rounded-[.5rem]'>Install Now ({size} MB)</button>
                       </div>
                   </div>
                </div>
