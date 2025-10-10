@@ -2,8 +2,8 @@ import React from 'react';
 import dw from '../../assets/icon-downloads.png'
 import rat from '../../assets/icon-ratings.png'
 
-const InstalledApp = ({a}) => {
-    const {image,title,downloads,ratingAvg,size}=a
+const InstalledApp = ({a,handalUninstall}) => {
+    const {image,title,downloads,ratingAvg,size,id}=a
     return (
         <div>
              <div className='flex justify-between items-center px-3 my-2 bg-white rounded-[.5rem] shadow-ms'>
@@ -18,7 +18,7 @@ const InstalledApp = ({a}) => {
                         </div>
                     </div>
                  </div>
-                 <button className='text-[1.2rem] font-semibold mt-5 px-3 py-1.5 rounded-[.5rem] bg-[#00d390] text-white'>Uninstall</button>
+                 <button onClick={()=>handalUninstall(id)} className='cursor-pointer text-[1.2rem] font-semibold mt-5 px-3 py-1.5 rounded-[.5rem] bg-[#00d390] text-white'>Uninstall</button>
              </div>
         </div>
     );

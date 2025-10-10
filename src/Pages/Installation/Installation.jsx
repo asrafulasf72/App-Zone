@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InstalledApp from './InstalledApp';
+import { removeStoredApp } from '../../Utility/AddToLocalDB';
 
 const Installation = () => {
 
@@ -12,6 +13,11 @@ const Installation = () => {
             setInstallation(installedApps)
         }
     },[])
+
+    const handalUninstall=(id)=>{
+         removeStoredApp(id)
+         setInstallation(prev=>prev.filter(app=>app.id !==id));
+    }
 
     const sortItem=(
         ()=>{
@@ -44,7 +50,7 @@ const Installation = () => {
 
                 <div className='py-2'>
                     {
-                        sortItem.map(a=> <InstalledApp key={a.id} a={a}></InstalledApp>)
+                        sortItem.map(a=> <InstalledApp key={a.id} a={a} handalUninstall={handalUninstall}></InstalledApp>)
                     }
                 </div>
               

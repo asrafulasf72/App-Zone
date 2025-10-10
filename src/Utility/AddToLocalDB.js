@@ -17,6 +17,12 @@ const addStoredApp=(id,image,title,ratingAvg,downloads,size)=>{
     localStorage.setItem("installation", JSON.stringify(updateApps))
     return true;
 
+};
+
+const removeStoredApp=(id)=>{
+         const storedApp =getStoredApps();
+         const UpdatedApps=storedApp.filter(app=>app.id !== id);
+         localStorage.setItem("installation", JSON.stringify(UpdatedApps));
 }
 
-export {getStoredApps,addStoredApp};
+export {getStoredApps,addStoredApp, removeStoredApp};
